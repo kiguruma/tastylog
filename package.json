@@ -1,0 +1,10 @@
+{
+  "name": "tastylog",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1"
+  }
+}
