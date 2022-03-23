@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import logo from './logo.svg'
-import './App.css'
 
 type apiData = {
   message: string
@@ -30,7 +28,7 @@ function App() {
     )
   }, [])
   return (
-    <div className="App">
+    <div>
       <h1>フロントエンド</h1>
       <p>{message}</p>
     </div>
