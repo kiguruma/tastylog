@@ -1,4 +1,4 @@
-const ssr = () => (`
+const ssr = () => `
   <html>
     <head>
       <title>CountUp</title>
@@ -12,6 +12,6 @@ const ssr = () => (`
       </div>
     </body>
   </html>
-`);
+`;
 
-export default ssr;git 
+export default ssr;
