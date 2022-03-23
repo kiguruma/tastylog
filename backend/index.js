@@ -1,7 +1,12 @@
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 
 const app = express();
+
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config();
+}
 
 const PORT = process.env.PORT || 3001;
 
@@ -15,7 +20,7 @@ app.use(
   })
 );
 
-// 3000番ポートでWebサーバを立てる
+// Webサーバを立てる
 app.listen(PORT, () => {
   console.log("サーバー起動");
   console.log(PORT);
