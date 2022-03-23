@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import logo from './logo.svg'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+type apiData = {
+  message: string
 }
 
-export default App;
+function App() {
+  const [message, setMessage] = useState<string>('')
+  const apiRequest = async (): Promise<void> => {
+    await fetch('http://localhost:3001/api')
+      .then((res) => res.json())
+      .then((data: apiData) => setMessage(data.message))
+  }
+  useEffect(() => {
+    // (async ():Promise<void> => {
+    //   await fetch('http://localhost:3001/api')
+    //     .then((res) => res.json())
+    //     .then((data) => setMessage(data.message))
+    //     .catch(() => console.log("ss"))
+    // })()
+    apiRequest().then(
+      () => {
+        console.log('aa')
+      },
+      () => {
+        console.log('aa')
+      }
+    )
+  }, [])
+  return (
+    <div className="App">
+      <h1>フロントエンド</h1>
+      <p>{message}</p>
+    </div>
+  )
+}
+
+export default App
