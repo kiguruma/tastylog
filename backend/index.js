@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { loggerConsole } from "./lib/log/logger.js";
 
 const app = express();
 
@@ -22,7 +23,8 @@ app.use(
 
 // Webサーバを立てる
 app.listen(PORT, () => {
-  console.log("サーバー起動");
+  loggerConsole.info("サーバー起動");
+  // console.log(logger);
   console.log(PORT);
 });
 // https://localhost:3000 にアクセスがあったら ssr() を返す
