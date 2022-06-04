@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Search } from 'components/Search'
 
 type apiData = {
   message: string
@@ -29,8 +30,7 @@ function App() {
   }, [])
   return (
     <div>
-      <h1>フロントエンド</h1>
-      <p>{message}</p>
+      <Search />
     </div>
   )
 }
